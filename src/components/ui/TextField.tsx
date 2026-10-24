@@ -4,9 +4,10 @@ import { Eye, EyeOff } from 'lucide-react';
 interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'id'> {
   label: string;
   error?: string;
+  hint?: string;
 }
 
-export function TextField({ label, error, type = 'text', ...rest }: TextFieldProps) {
+export function TextField({ label, error, hint, type = 'text', ...rest }: TextFieldProps) {
   const id = useId();
   const [visible, setVisible] = useState(false);
   const isPassword = type === 'password';
@@ -34,6 +35,7 @@ export function TextField({ label, error, type = 'text', ...rest }: TextFieldPro
           </button>
         )}
       </div>
+      {!error && hint && <span className="field__hint">{hint}</span>}
       {error && <span id={`${id}-error`} className="field__error" role="alert">{error}</span>}
     </div>
   );
