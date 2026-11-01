@@ -5,6 +5,7 @@ import ModeSelectPage from '../features/auth/pages/ModeSelectPage';
 import RegisterPage from '../features/auth/pages/RegisterPage';
 import { ProfileLayout } from '../features/profile/ProfileLayout';
 import ProfilePage from '../features/profile/ProfilePage';
+import NewRequestPage from '../features/request/NewRequestPage';
 import ComingSoonPage from '../features/shell/ComingSoonPage';
 import HomePage from '../features/shell/HomePage';
 import { ModeLayout } from '../features/shell/ModeLayout';
@@ -12,6 +13,9 @@ import { TabsLayout } from '../features/shell/TabsLayout';
 import { CLIENT_TABS, TECHNICIAN_TABS } from '../features/shell/tabs';
 import ApplicationFormPage from '../features/technician-application/ApplicationFormPage';
 import TechnicianGatePage from '../features/technician-application/TechnicianGatePage';
+import RequestSummaryPage from '../features/request/RequestSummaryPage';
+import AnalysisPage from '../features/request/AnalysisPage';
+
 
 /* HashRouter: no depende de que el servidor/WebView resuelva rutas profundas dentro de la APK. */
 export const router = createHashRouter([
@@ -47,6 +51,10 @@ export const router = createHashRouter([
                   // Flujo de postulación: pantallas completas, sin bottom menu.
                   { path: '/cliente/tecnico', element: <TechnicianGatePage /> },
                   { path: '/cliente/tecnico/postular', element: <ApplicationFormPage /> },
+                  // Flujo de nueva solicitud: pantallas completas, sin bottom menu.
+                  { path: '/cliente/solicitud/nueva', element: <NewRequestPage /> },
+                  { path: '/cliente/solicitud/resumen', element: <RequestSummaryPage /> },
+                  { path: '/cliente/solicitud/analisis', element: <AnalysisPage /> },
                 ],
               },
             ],

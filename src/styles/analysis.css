@@ -1,0 +1,33 @@
+.an-main { align-items: center; text-align: center; justify-content: center; }
+
+.an-halo {
+  width: 140px; height: 140px; border-radius: 50%; background: #dbeafe;
+  display: grid; place-items: center; margin-bottom: 32px;
+  animation: an-pulse 1.8s ease-in-out infinite;
+}
+.an-core {
+  width: 96px; height: 96px; border-radius: 50%; background: var(--color-blue);
+  color: #fff; display: grid; place-items: center;
+  box-shadow: 0 8px 20px rgb(37 99 235 / 0.35);
+}
+
+.an-title { font-size: 20px; font-weight: 800; margin: 0 0 8px; }
+.an-text { color: var(--color-text-secondary); line-height: 1.5; margin: 0 0 24px; max-width: 280px; }
+
+.an-track { width: 100%; height: 8px; border-radius: 999px; background: var(--color-border); overflow: hidden; }
+.an-fill { height: 100%; border-radius: 999px; background: var(--color-blue); transition: width 0.1s linear; }
+.an-percent { color: var(--color-blue-strong); font-size: 13px; font-weight: 700; margin: 10px 0 0; }
+
+.an-footer {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  color: var(--color-text-secondary); font-size: 13px; padding-top: 16px;
+}
+.an-footer svg { color: var(--color-blue); flex: none; }
+
+@keyframes an-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .an-halo { animation: none; }
+}
