@@ -108,7 +108,7 @@ export default function RequestSummaryPage() {
           type="button"
           className="btn btn--outline"
           disabled={sending}
-          onClick={() => void navigate('/cliente/solicitud/nueva')}
+          onClick={() => void navigate('/cliente/solicitud/editar')}
         >
           Editar detalles
         </button>

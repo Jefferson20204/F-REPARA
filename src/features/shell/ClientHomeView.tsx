@@ -1,6 +1,8 @@
-import { ArrowRight, Bell, Droplets, Search, WashingMachine, Zap } from 'lucide-react';
+import { ArrowRight, Bell, ChevronRight, Droplets, Search, WashingMachine, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { useResource } from '../../core/hooks/useResource';
+import { setActiveRequestId } from '../request/activeRequest';
+import { routeForStatus } from '../request/requestRoutes';
 import { fetchMyRequests } from '../request/solicitudesApi';
 import '../../styles/clientHome.css';
 
@@ -91,16 +93,42 @@ export function ClientHomeView({ firstName }: { firstName: string }) {
         )}
 
         {state.status === 'ready' &&
-          state.data.slice(0, MAX_RECENT).map((item) => (
-            <article key={item.id} className="ch-request">
-              <div className="ch-request__top">
-                <WashingMachine size={20} className="ch-request__icon" />
-                <span className="ch-request__title">{item.title}</span>
-                <span className={'chip chip--' + item.tone}>{item.statusLabel}</span>
-              </div>
-              <p className="ch-request__desc">{item.description}</p>
-            </article>
-          ))}
+          state.data.slice(0, MAX_RECENT).map((item) => {
+            const route = routeForStatus(item.statusCode);
+            const content = (
+              <>
+                <span className="ch-request__top">
+                  <WashingMachine size={20} className="ch-request__icon" />
+                  <span className="ch-request__title">{item.title}</span>
+                  <span className={'chip chip--' + item.tone}>{item.statusLabel}</span>
+                  {route !== null && <ChevronRight size={18} className="ch-request__go" />}
+                </span>
+                <span className="ch-request__desc">{item.description}</span>
+              </>
+            );
+
+            if (route === null) {
+              return (
+                <article key={item.id} className="ch-request">
+                  {content}
+                </article>
+              );
+            }
+
+            return (
+              <button
+                key={item.id}
+                type="button"
+                className="ch-request ch-request--link"
+                onClick={() => {
+                  setActiveRequestId(item.id);
+                  void navigate(route);
+                }}
+              >
+                {content}
+              </button>
+            );
+          })}
       </div>
     </div>
   );

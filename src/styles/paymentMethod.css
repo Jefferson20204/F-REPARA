@@ -1,0 +1,29 @@
+.pm-header { margin-bottom: 8px; }
+.pm-subtitle { color: var(--color-text-secondary); margin: 0 0 16px; }
+
+.pm-list { display: flex; flex-direction: column; gap: 12px; }
+.pm-option {
+  width: 100%; display: flex; align-items: center; gap: 14px; padding: 14px; text-align: left;
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+}
+.pm-option--on { border: 2px solid var(--color-blue); padding: 13px; }
+
+.pm-badge {
+  width: 40px; height: 40px; border-radius: 10px; flex: none; display: grid; place-items: center;
+  font-weight: 800; font-size: 16px; color: #fff;
+}
+.pm-badge--yape { background: #6b21a8; }
+.pm-badge--plin { background: #14b8a6; }
+.pm-badge--card { background: #e2e8f0; color: var(--color-text-secondary); }
+
+.pm-text { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pm-title { font-weight: 700; font-size: 15px; }
+.pm-sub { color: var(--color-text-muted); font-size: 12px; }
+
+.pm-radio {
+  width: 22px; height: 22px; border-radius: 50%; flex: none;
+  border: 2px solid var(--color-border); background: var(--color-surface);
+}
+.pm-option--on .pm-radio { border-color: var(--color-blue); background: var(--color-blue); box-shadow: inset 0 0 0 4px #fff; }
+
+.pm-actions { margin-top: auto; padding-top: 32px; display: flex; flex-direction: column; gap: 12px; }

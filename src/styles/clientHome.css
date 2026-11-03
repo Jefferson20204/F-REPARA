@@ -55,3 +55,8 @@
 .ch-request__title { flex: 1; font-weight: 700; font-size: 15px; }
 .ch-request__desc { color: var(--color-text-secondary); line-height: 1.5; margin: 10px 0 0; }
 .ch-state { color: var(--color-text-muted); text-align: center; margin: 8px 0; }
+
+.ch-request--link { display: block; width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.ch-request--link:active { background: #f8fafc; }
+.ch-request__desc { display: block; }
+.ch-request__go { color: var(--color-placeholder); flex: none; }

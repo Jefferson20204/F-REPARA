@@ -1,0 +1,41 @@
+.rt-header { margin-bottom: 8px; }
+
+.rt-tech { display: flex; flex-direction: column; align-items: center; text-align: center; margin: 8px 0 20px; }
+.rt-avatar {
+  width: 88px; height: 88px; border-radius: 50%; background: var(--color-blue-strong); color: #fff;
+  display: grid; place-items: center; font-size: 28px; font-weight: 800; margin-bottom: 12px;
+}
+.rt-name { font-size: 18px; font-weight: 800; margin: 0 0 4px; }
+.rt-ask { color: var(--color-text-secondary); margin: 0 0 14px; }
+
+.rt-stars { display: flex; gap: 6px; }
+.rt-star { background: none; border: 0; padding: 2px; color: #cbd5e1; line-height: 0; }
+.rt-star--on { color: #f97316; }
+.rt-star--on svg { fill: currentColor; }
+
+.rt-question { display: block; font-weight: 700; margin: 20px 0 10px; }
+.rt-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.rt-tag {
+  height: 34px; padding: 0 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text-secondary);
+}
+.rt-tag--on { background: var(--color-blue); border-color: var(--color-blue); color: #fff; }
+
+.rt-comment {
+  width: 100%; min-height: 96px; padding: 12px 14px; resize: vertical; line-height: 1.5; outline: none;
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md);
+}
+.rt-comment::placeholder { color: var(--color-placeholder); }
+.rt-comment:focus { border-color: var(--color-blue); box-shadow: 0 0 0 3px rgb(37 99 235 / 0.15); }
+
+.rt-actions { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 6px; }
+.rt-skip { background: none; border: 0; padding: 10px; color: var(--color-blue); font-weight: 700; }
+
+.rs2-main { align-items: center; text-align: center; justify-content: center; }
+.rs2-halo {
+  width: 140px; height: 140px; border-radius: 50%; background: var(--color-surface); color: var(--color-blue);
+  border: 1px solid var(--color-border); display: grid; place-items: center; margin-bottom: 28px;
+  box-shadow: 0 4px 16px rgb(15 23 42 / 0.06);
+}
+.rs2-title { font-size: 22px; font-weight: 800; margin: 0 0 10px; }
+.rs2-text { color: var(--color-text-secondary); line-height: 1.6; margin: 0; max-width: 300px; }

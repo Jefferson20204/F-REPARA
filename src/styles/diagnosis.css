@@ -1,0 +1,29 @@
+.dg-header { margin-bottom: 8px; }
+.dg-subtitle { color: var(--color-text-secondary); margin: 0 0 16px; }
+
+.dg-card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 16px; margin-bottom: 12px;
+}
+.dg-label { color: var(--color-blue); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; margin: 0 0 10px; }
+.dg-problem { font-weight: 800; font-size: 16px; margin: 0 0 8px; }
+.dg-detail { color: var(--color-text-secondary); line-height: 1.5; margin: 0; }
+
+.dg-row { display: flex; justify-content: space-between; color: var(--color-text-secondary); padding: 5px 0; }
+.dg-total {
+  display: flex; justify-content: space-between; align-items: center; font-weight: 800;
+  margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--color-border);
+}
+.dg-total__amount { color: #ea580c; font-size: 18px; }
+
+.dg-note {
+  display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: var(--radius-md);
+  background: #fef3c7; color: #b45309; font-size: 12px; font-weight: 600;
+}
+.dg-note svg { flex: none; }
+
+.dg-actions { margin-top: auto; padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.dg-reject {
+  background: none; border: 0; padding: 8px; color: var(--color-text-muted); font-weight: 600; font-size: 13px;
+}
+.dg-confirm { color: var(--color-text-secondary); line-height: 1.5; text-align: center; margin: 0; }

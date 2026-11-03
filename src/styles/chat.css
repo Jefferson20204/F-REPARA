@@ -1,0 +1,49 @@
+.cm { display: flex; flex-direction: column; height: 100dvh; }
+
+.cm-header {
+  display: flex; align-items: center; gap: 12px; flex: none;
+  padding: calc(12px + var(--safe-top)) var(--screen-padding) 12px;
+  background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+}
+.cm-avatar {
+  width: 40px; height: 40px; border-radius: 50%; flex: none; background: var(--color-blue-strong);
+  color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 14px;
+}
+.cm-who { flex: 1; min-width: 0; }
+.cm-name { font-weight: 800; margin: 0; }
+.cm-role { color: var(--color-text-muted); font-size: 12px; margin: 1px 0 0; }
+.cm-shield {
+  width: 36px; height: 36px; border-radius: 10px; flex: none;
+  background: #dbeafe; color: var(--color-blue); display: grid; place-items: center;
+}
+
+.cm-messages {
+  flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;
+  padding: 16px var(--screen-padding);
+}
+.cm-bubble { max-width: 80%; margin: 0; padding: 10px 14px; border-radius: 16px; line-height: 1.4; word-break: break-word; }
+.cm-bubble--tech { align-self: flex-start; background: #eceff3; border-bottom-left-radius: 4px; }
+.cm-bubble--me { align-self: flex-end; background: var(--color-blue); color: #fff; border-bottom-right-radius: 4px; }
+
+.cm-composer {
+  display: flex; align-items: center; gap: 8px; flex: none;
+  padding: 12px var(--screen-padding) calc(12px + var(--safe-bottom));
+  background: var(--color-surface); border-top: 1px solid var(--color-border);
+}
+.cm-plus, .cm-send {
+  width: 40px; height: 40px; border-radius: 50%; border: 0; flex: none; display: grid; place-items: center;
+}
+.cm-plus { background: none; color: var(--color-blue); }
+.cm-send { background: var(--color-blue); color: #fff; }
+.cm-plus:disabled, .cm-send:disabled { opacity: 0.45; cursor: not-allowed; }
+.cm-input {
+  flex: 1; min-width: 0; height: 40px; padding: 0 16px; border-radius: 999px; outline: none;
+  background: #f1f5f9; border: 1px solid var(--color-border);
+}
+.cm-input:focus { border-color: var(--color-blue); background: var(--color-surface); }
+
+.cm-empty { color: var(--color-text-muted); text-align: center; margin: auto 0; }
+.cm-send-error {
+  flex: none; background: var(--color-danger-bg); color: #b91c1c; font-size: 13px;
+  padding: 8px var(--screen-padding);
+}

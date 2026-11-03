@@ -1,6 +1,7 @@
 import { request, isRecord } from '../../core/api/apiClient';
 import { ApiError } from '../../core/api/ApiError';
 import { readNumber, readString, unwrapDatos } from '../../core/api/envelope';
+import { setActiveRequestId } from './activeRequest';
 import { CATEGORY_ID, type RequestDraft } from './requestDraft';
 
 /* El back solo tiene descripcionProblema: marca, modelo y horario viajan dentro del texto. */
@@ -12,14 +13,18 @@ export function buildDescription(draft: RequestDraft): string {
   return lines.join('\n');
 }
 
-/** POST /solicitudes/crear */
+/** POST /solicitudes/crear. Deja guardado el id de la solicitud creada. */
 export async function createRequest(draft: RequestDraft): Promise<void> {
   const body = {
     idCategoria: CATEGORY_ID[draft.appliance],
     descripcionProblema: buildDescription(draft),
     direccionServicio: draft.address,
   };
-  unwrapDatos(await request('/solicitudes/crear', { method: 'POST', body }));
+  const datos = unwrapDatos(await request('/solicitudes/crear', { method: 'POST', body }));
+  if (isRecord(datos)) {
+    const id = readNumber(datos, 'idSolicitud');
+    if (id !== null) setActiveRequestId(id);
+  }
 }
 
 export type StatusTone = 'warning' | 'success' | 'danger';
@@ -28,6 +33,7 @@ export interface RequestSummary {
   id: number;
   title: string;
   description: string;
+  statusCode: string;
   statusLabel: string;
   tone: StatusTone;
 }
@@ -66,12 +72,14 @@ function toSummary(record: Record<string, unknown>): RequestSummary | null {
   const device = [brand, model].filter((part): part is string => part !== null && part !== '').join(' ');
   const description = problem !== null ? (device !== '' ? device + ' - ' + problem : problem) : text;
 
-  const status = STATUS[readString(record, 'estado') ?? ''];
+  const statusCode = readString(record, 'estado') ?? '';
+  const status = STATUS[statusCode];
 
   return {
     id,
     title: appliance !== null ? 'Reparacion de ' + appliance : 'Solicitud #' + id,
     description,
+    statusCode,
     statusLabel: status?.label ?? 'En proceso',
     tone: status?.tone ?? 'warning',
   };

@@ -1,0 +1,45 @@
+.rd-main { align-items: center; text-align: center; justify-content: center; }
+
+.rd-halo {
+  width: 72px; height: 72px; border-radius: 50%; background: #dbeafe; color: var(--color-blue);
+  display: grid; place-items: center; margin-bottom: 20px;
+}
+.rd-title { font-size: 22px; font-weight: 800; margin: 0 0 8px; }
+.rd-text { color: var(--color-text-secondary); line-height: 1.5; margin: 0 0 24px; max-width: 280px; }
+
+.rd-card {
+  width: 100%; text-align: left; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 16px; margin-bottom: 12px;
+}
+.rd-label { color: var(--color-blue); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; margin: 0 0 12px; }
+.rd-small { color: var(--color-text-muted); font-size: 12px; margin: 0 0 4px; }
+.rd-gap { margin-top: 14px; }
+.rd-strong { font-weight: 800; margin: 0; }
+.rd-device { display: flex; align-items: center; gap: 8px; }
+.rd-device svg { flex: none; color: var(--color-text-secondary); }
+
+.rd-person {
+  display: flex; align-items: center; gap: 12px; margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid var(--color-border);
+}
+.rd-avatar {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--color-blue-strong); color: #fff;
+  display: grid; place-items: center; font-weight: 800; font-size: 13px; flex: none;
+}
+.rd-person__text { flex: 1; min-width: 0; }
+.rd-person__name { font-weight: 800; margin: 0; }
+.rd-person__role { color: var(--color-text-muted); font-size: 12px; margin: 1px 0 0; }
+.rd-chip {
+  background: #dbeafe; color: var(--color-blue-strong); font-size: 11px; font-weight: 700;
+  padding: 3px 9px; border-radius: 999px; flex: none;
+}
+
+.rd-warranty {
+  width: 100%; text-align: left; display: flex; gap: 12px; align-items: flex-start;
+  background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: var(--radius-lg); padding: 14px;
+}
+.rd-warranty__icon { color: #047857; flex: none; margin-top: 2px; }
+.rd-warranty__title { color: #047857; font-weight: 800; margin: 0 0 4px; }
+.rd-warranty__text { color: var(--color-text-secondary); font-size: 12px; line-height: 1.5; margin: 0; }
+
+.rd-actions { padding-top: 24px; }

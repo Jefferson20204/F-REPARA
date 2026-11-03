@@ -1,0 +1,42 @@
+.ta-header { display: flex; flex-direction: column; align-items: center; text-align: center; margin: 8px 0 24px; }
+.ta-check {
+  width: 56px; height: 56px; border-radius: 50%; background: #dbeafe; color: var(--color-blue);
+  display: grid; place-items: center; margin-bottom: 14px;
+}
+.ta-title { font-size: 22px; font-weight: 800; margin: 0 0 6px; }
+.ta-subtitle { color: var(--color-text-secondary); line-height: 1.5; margin: 0; max-width: 260px; }
+
+.ta-card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 16px; margin-bottom: 16px;
+}
+.ta-person { display: flex; align-items: center; gap: 14px; padding-bottom: 16px; border-bottom: 1px solid var(--color-border); }
+.ta-avatar {
+  width: 56px; height: 56px; border-radius: 50%; background: var(--color-blue-strong); color: #fff;
+  display: grid; place-items: center; font-weight: 800; font-size: 18px; flex: none;
+}
+.ta-name { display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 16px; margin: 0 0 6px; }
+.ta-verified { color: var(--color-blue); }
+.ta-meta { display: flex; align-items: center; gap: 10px; color: var(--color-text-muted); font-size: 13px; margin: 0; }
+.ta-rating {
+  display: inline-flex; align-items: center; gap: 4px; background: #fef3c7; color: #b45309;
+  font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 999px;
+}
+.ta-rating svg { fill: currentColor; }
+.ta-specialty { padding-top: 14px; line-height: 1.5; }
+.ta-specialty p { margin: 0; }
+.ta-specialty__label { font-weight: 700; margin-bottom: 4px !important; }
+
+.ta-payment { background: #dbeafe; border-radius: var(--radius-lg); padding: 16px; }
+.ta-payment__label { color: var(--color-blue-strong); font-size: 12px; font-weight: 800; letter-spacing: 0.02em; margin: 0 0 12px; }
+.ta-row { display: flex; justify-content: space-between; color: var(--color-text-secondary); padding: 4px 0; }
+.ta-total {
+  display: flex; justify-content: space-between; align-items: center; font-weight: 800;
+  margin-top: 10px; padding-top: 12px; border-top: 1px solid rgb(37 99 235 / 0.25);
+}
+.ta-total__amount { color: var(--color-blue); font-size: 20px; }
+
+.ta-actions { margin-top: auto; padding-top: 32px; text-align: center; }
+.ta-btn { background: #f97316; color: #fff; }
+.ta-btn:active:not(:disabled) { background: #ea580c; }
+.ta-secure { color: var(--color-text-muted); font-size: 12px; margin: 12px 0 0; }
